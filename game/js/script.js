@@ -39,8 +39,11 @@ var Game = function(total) {
 	var game, lastClicked;	
 
 	function initialize() {
+		$("img").off('click');
+		$("img").click(imageClicked);			
 		$("img" ).attr('src', "images/start.png");
-		$(".label").text(0);
+		$("#score").text(0);
+		$("#score").attr('class', 'label label-default')
 		game = new Game(12);
 		game.initialize();
 		lastClicked = -1;				
@@ -71,7 +74,15 @@ var Game = function(total) {
 		} else {				
 			result = game.calculateScore(lastClicked - 1, this['id'] - 1);				
 			
-			$(".label").text(game.score);
+			$("#score").text(game.score);
+			if (game.score == 0) {
+				$("#score").attr('class', 'label label-default')
+			} else if (game.score < 0) {
+				$("#score").attr('class', 'label label-danger')
+			} else {
+				$("#score").attr('class', 'label label-success')
+			}
+
 			if (result === 'match'){				
 				$("#" + lastClicked).off('click');		
 				$("#" + this['id']).off('click');		
@@ -84,8 +95,8 @@ var Game = function(total) {
 	}
 
 	$(document).ready(function(){		
-		initialize();
-		$("img").click(imageClicked);			
+		initialize();		
+		$(".navbar-brand").click(initialize);
 	});
 
 })(window);
