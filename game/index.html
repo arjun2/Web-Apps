@@ -37,11 +37,27 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">        
-        <li><a href="#">How to play</a></li>        
+        <li><a id="help" href="#" data-toggle="modal" data-target=".bs-example-modal-sm">How to play</a></li>        
       </ul>      
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
+
+<div class="modal fade bs-example-modal-sm" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">   
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>     
+        <h4 class="modal-title" id="myModalLabel">How to play</h4>
+      </div>
+      <div class="modal-body">
+        Goal is to make pairs of images in least number of clicks. 
+        <p>Clicking on a tile reveals the image behind it. A correct move will give you 5 points. An in-correct move will deduct 2 points.</p>
+      </div>      
+    </div>
+  </div>
+</div>
+
 
   <div id="main-content" class="container-fluid">
     <div class="row">

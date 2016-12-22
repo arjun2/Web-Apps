@@ -25,6 +25,10 @@ img {
   box-shadow: 10px 10px 5px #888888;
 }
 
+#help:focus {
+  outline: none;
+}
+
 /********** Extra small devices only **********/
 @media (max-width: 500px) {
   img {

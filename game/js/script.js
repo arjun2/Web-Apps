@@ -97,6 +97,11 @@ var Game = function(total) {
 	$(document).ready(function(){		
 		initialize();		
 		$(".navbar-brand").click(initialize);
+		$('#myModal').on('hidden.bs.modal', function (e) {
+			if ($('.navbar-toggle').is(':visible')) {
+				$('.navbar-toggle').click();				
+			}  					
+		});
 	});
 
 })(window);
